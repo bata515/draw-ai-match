@@ -44,16 +44,16 @@
    - `api/`ディレクトリ内のPythonファイルを編集すると、自動的にサーバーが再起動されます
    - ブラウザで変更を確認できます
 
-3. **新しい依存関係の追加**
+3. **新しい依存関係の追加方法**
    ```bash
-   # コンテナ内でPoetryを使用してパッケージを追加
-   docker-compose exec demo-app poetry add パッケージ名 bash
+   # コンテナの起動
+   docker-compose up
    
-   # 例：requestsライブラリを追加
-   docker-compose exec demo-app poetry add requests bash
+   # コンテナのbashシェルに接続
+   docker exec -it コンテナ名 bash
    
-   # 開発用パッケージを追加
-   docker-compose exec demo-app poetry add --group dev pytest
+   # パッケージを追加
+   poetry add パッケージ名
    ```
 
 4. **依存関係の削除**

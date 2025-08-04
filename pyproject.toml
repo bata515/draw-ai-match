@@ -14,7 +14,8 @@ dependencies = [
     "torchvision (>=0.22.1,<0.23.0)",
     "pillow (>=11.3.0,<12.0.0)",
     "pyheif (>=0.8.0,<0.9.0)",
-    "pillow-heif (>=1.1.0,<2.0.0)"
+    "pillow-heif (>=1.1.0,<2.0.0)",
+    "python-multipart (>=0.0.20,<0.0.21)"
 ]
 
 
