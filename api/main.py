@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from api.test import router as test_router
+from api.compare_images import router as test_router
 
 app = FastAPI()
 
