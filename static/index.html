@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw AI Match - 画像類似度採点アプリ</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="title-emoji">🎨</span>
+                Draw AI Match
+            </h1>
+            <p class="subtitle">AI による画像類似度採点アプリ</p>
+        </header>
+
+        <main class="main">
+            <div class="upload-section">
+                <div class="upload-grid">
+                    <div class="upload-box" id="upload-box-1">
+                        <input type="file" id="image1" accept="image/*,.heic" class="file-input">
+                        <label for="image1" class="upload-label">
+                            <div class="upload-content">
+                                <div class="upload-icon">📸</div>
+                                <div class="upload-text">
+                                    <div class="upload-title">お題画像</div>
+                                    <div class="upload-description">クリックまたはドラッグ&ドロップ</div>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="image-preview" id="preview-1"></div>
+                    </div>
+
+                    <div class="vs-divider">
+                        <div class="vs-text">VS</div>
+                    </div>
+
+                    <div class="upload-box" id="upload-box-2">
+                        <input type="file" id="image2" accept="image/*,.heic" class="file-input">
+                        <label for="image2" class="upload-label">
+                            <div class="upload-content">
+                                <div class="upload-icon">🖼️</div>
+                                <div class="upload-text">
+                                    <div class="upload-title">比較対象画像</div>
+                                    <div class="upload-description">クリックまたはドラッグ&ドロップ</div>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="image-preview" id="preview-2"></div>
+                    </div>
+                </div>
+
+                <button id="compare-btn" class="compare-btn" disabled>
+                    <span class="btn-icon">⚡</span>
+                    類似度を採点する
+                </button>
+            </div>
+
+            <div class="result-section" id="result-section">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h2 class="result-title">採点結果</h2>
+                    </div>
+                    <div class="result-body">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <div class="score-value" id="score-value">0</div>
+                                <div class="score-unit">%</div>
+                            </div>
+                        </div>
+                        <div class="score-description">
+                            <p id="score-text">画像をアップロードして採点してください</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-overlay" id="loading-overlay">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">AI が画像を分析中...</div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by PyTorch ResNet18</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
