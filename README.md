@@ -73,13 +73,53 @@
   docker ps -a
   ```
 
+## テスト
+
+### テストの実行
+
+**全てのテストを実行:**
+```bash
+docker-compose exec demo-app poetry run pytest
+```
+
+**詳細な出力でテストを実行:**
+```bash
+docker-compose exec demo-app poetry run pytest -v
+```
+
+**特定のテストファイルを実行:**
+```bash
+docker-compose exec demo-app poetry run pytest tests/test_compare_images.py -v
+```
+
+### カバレッジの確認
+
+**カバレッジ付きでテスト実行:**
+```bash
+docker-compose exec demo-app poetry run pytest --cov=api
+```
+
+**詳細なカバレッジレポートをHTML形式で生成:**
+```bash
+docker-compose exec demo-app poetry run pytest --cov=api --cov-report=html
+```
+
+**カバレッジレポート（ターミナル表示）:**
+```bash
+docker-compose exec demo-app poetry run pytest --cov=api --cov-report=term-missing
+```
+
 ### プロジェクト構成
 
 ```
 draw-ai-match/
 ├── api/                  # FastAPIアプリケーション
 │   ├── __init__.py
-│   └── main.py           # API実装ファイル
+│   ├── main.py           # メインのFastAPIアプリ
+│   └── compare_images.py # 画像比較API実装
+├── tests/                # テストファイル
+│   ├── __init__.py
+│   └── test_compare_images.py  # 画像比較APIのユニットテスト
 ├── docker-compose.yaml   # Docker Compose設定
 ├── Dockerfile            # Dockerイメージ定義
 ├── pyproject.toml        # Poetry設定・依存関係
