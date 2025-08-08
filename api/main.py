@@ -4,7 +4,7 @@ from fastapi.responses import FileResponse
 
 from api.compare_images import router as test_router
 
-app = FastAPI(title="Draw AI Match", description="画像類似度採点システム")
+app = FastAPI(title="Draw AI Match", description="画像類似度採点アプリ")
 
 # Static files
 app.mount("/static", StaticFiles(directory="static"), name="static")

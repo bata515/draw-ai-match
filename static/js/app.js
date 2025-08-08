@@ -207,16 +207,16 @@ function displayResult(score) {
     let color;
     
     if (percentage >= 90) {
-        description = '🎉 素晴らしい！ほぼ同じ画像です';
+        description = '🎉 素晴らしい！ほぼ同じです！';
         color = '#48bb78';
     } else if (percentage >= 70) {
-        description = '😊 とても似ています！良い結果です';
+        description = '😊 とても似ています！良い結果です！';
         color = '#38a169';
     } else if (percentage >= 50) {
-        description = '🤔 ある程度似ています';
+        description = '🤔 ある程度似ています。もうちょっと..！';
         color = '#ed8936';
     } else if (percentage >= 30) {
-        description = '😐 少し似ている部分があります';
+        description = '😐 少し似ている部分があるかも..?';
         color = '#e53e3e';
     } else {
         description = '😅 あまり似ていないようです';
