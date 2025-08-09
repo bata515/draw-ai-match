@@ -14,5 +14,8 @@ COPY pyproject.toml* poetry.lock* ./
 RUN poetry config virtualenvs.in-project true
 RUN if [ -f pyproject.toml ]; then poetry install --no-root; fi
 
+# ソースコードをコピー（
+COPY . .
+
 # uvicornのサーバーを立ち上げる
 ENTRYPOINT ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--reload"]
