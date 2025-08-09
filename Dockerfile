@@ -12,6 +12,8 @@ COPY pyproject.toml* poetry.lock* ./
 
 # poetryでライブラリをインストール (pyproject.tomlが既にある場合)
 RUN poetry config virtualenvs.in-project true
+# CPU版PyTorchを明示的にインストール（GPU環境なしのRender.com対応）
+RUN pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision
 RUN if [ -f pyproject.toml ]; then poetry install --no-root; fi
 
 # ソースコードをコピー（
