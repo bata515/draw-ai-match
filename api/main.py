@@ -16,3 +16,8 @@ app.include_router(test_router, prefix="/api")
 @app.get("/")
 async def read_root():
     return FileResponse("static/index.html")
+
+# Legal page route
+@app.get("/legal")
+async def read_legal():
+    return FileResponse("static/legal.html")
