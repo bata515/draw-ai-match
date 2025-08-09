@@ -13,7 +13,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(test_router, prefix="/api")
 
 # Root route to serve the main page
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def read_root():
     return FileResponse("static/index.html")
 
