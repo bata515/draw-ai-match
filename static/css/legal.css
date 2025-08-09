@@ -1,0 +1,163 @@
+/* Legal page specific styles */
+
+/* Navigation */
+.nav {
+    margin-top: 1.5rem;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+}
+
+/* Legal main content */
+.legal-main {
+    padding: 3rem 2rem;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Legal sections */
+.legal-section {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.section-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1.5rem 2rem;
+    margin: 0;
+    position: relative;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.section-content {
+    padding: 2rem;
+}
+
+/* Legal lists */
+.legal-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: item;
+}
+
+.legal-list li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    line-height: 1.7;
+    color: #4a5568;
+    font-size: 1rem;
+    position: relative;
+}
+
+.legal-list li::marker {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.legal-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive design for legal page */
+@media (max-width: 768px) {
+    .legal-main {
+        padding: 2rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .section-content {
+        padding: 1.5rem;
+    }
+    
+    .legal-list {
+        padding-left: 1.25rem;
+    }
+    
+    .legal-list li {
+        font-size: 0.95rem;
+        padding-left: 0.25rem;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-main {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+        padding: 1rem 1.25rem;
+    }
+    
+    .section-content {
+        padding: 1.25rem;
+    }
+    
+    .legal-list {
+        padding-left: 1rem;
+    }
+    
+    .legal-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .nav-icon {
+        font-size: 1rem;
+    }
+}
