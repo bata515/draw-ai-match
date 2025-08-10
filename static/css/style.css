@@ -380,12 +380,12 @@ body {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .footer-tech {
@@ -399,7 +399,7 @@ body {
 }
 
 .footer-link {
-    color: #4a5568;
+    color: #667eea;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 500;
