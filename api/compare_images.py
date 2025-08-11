@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 import torch
 import torch.nn.functional as F
 from torchvision import models, transforms
+from torchvision.models import ResNet18_Weights
 from PIL import Image
 import sys
 import pyheif
@@ -28,7 +29,7 @@ async def compare_images(
     return JSONResponse(content={"similarity_score": round(score, 4)})
 
 # 特徴量抽出モデル
-model = models.resnet18(pretrained=True)
+model = models.resnet18(weights=ResNet18_Weights.DEFAULT)
 model.eval()
 
 # 前処理
